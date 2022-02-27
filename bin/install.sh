@@ -30,6 +30,7 @@ upgrade_hive() {
 
     /etc/init.d/mysqld start
     mysql -uroot -pcloudera metastore -e "source apache-hive-1.2.2-bin/scripts/metastore/upgrade/mysql/upgrade-1.1.0-to-1.2.0.mysql.sql"
+    echo "upgrade result:$?"
     rm -rf apache-hive-*
 }
 
