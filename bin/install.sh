@@ -10,7 +10,8 @@ yum_install() {
     mv /etc/yum.repos.d /etc/yum.repos.d.bak
     mkdir /etc/yum.repos.d/ && cp *.repo /etc/yum.repos.d/
     yum makecache
-    yum install -y wget lsof strace
+    yum install -y vim wget lsof strace
+    yum clean all
 }
 
 upgrade_java() {
@@ -85,6 +86,7 @@ install_kdc() {
 
 yum_install
 install_kdc
-upgrade_hive
-upgrade_java
-upgrade_hbase_thrift2
+
+#upgrade_hive
+#upgrade_java
+#upgrade_hbase_thrift2

@@ -1,4 +1,4 @@
-FROM iregistry.baidu-int.com/xiajie01/cloudera-quickstart:latest
+FROM docker.mirrors.ustc.edu.cn/cloudera/quickstart:latest
 WORKDIR /root
 
 COPY bin/* conf/* /tmp/

@@ -1,7 +1,5 @@
 #!/bin/bash
 
-ntpdate ntpsr.baidu.com
-
 service krb5kdc start
 service kadmin start
 service ntpd start
