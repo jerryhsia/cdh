@@ -44,7 +44,7 @@ install_kdc() {
         kadmin.local -q "xst -k /root/keytab/${user}_user.keytab ${user}/user@HADOOP.COM"
     done
 
-    for user in root admin
+    for user in root
     do
         expect -c "
         spawn kadmin.local -q \"add_principal ${user}/admin\"
