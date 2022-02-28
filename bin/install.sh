@@ -3,7 +3,6 @@
 set -e
 
 cd /tmp
-
 cp /tmp/startup.sh /root/
 
 yum_install() {
