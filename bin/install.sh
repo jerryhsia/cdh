@@ -13,7 +13,7 @@ yum_install() {
 }
 
 upgrade_java() {
-    curl -k -o jdk-8u151-linux-x64.tar.gz https://repo.huaweicloud.com/java/jdk/8u151-b12/jdk-8u151-linux-x64.tar.gz
+    wget -O jdk-8u151-linux-x64.tar.gz https://repo.huaweicloud.com/java/jdk/8u151-b12/jdk-8u151-linux-x64.tar.gz
     tar -xf jdk-8u151-linux-x64.tar.gz 
     rm -rf /usr/java/jdk1.7.0_67-cloudera
     mv jdk1.8.0_151 /usr/java/jdk1.7.0_67-cloudera
@@ -21,7 +21,7 @@ upgrade_java() {
 }
 
 upgrade_hive() {
-    curl -k -o apache-hive-1.2.2-bin.tar.gz https://mirrors.tuna.tsinghua.edu.cn/apache/hive/hive-1.2.2/apache-hive-1.2.2-bin.tar.gz
+    wget -O apache-hive-1.2.2-bin.tar.gz https://archive.apache.org/dist/hive/hive-1.2.2/apache-hive-1.2.2-bin.tar.gz
     
     tar -xf apache-hive-1.2.2-bin.tar.gz
     cp -r apache-hive-1.2.2-bin/lib /usr/lib/hive/lib120
