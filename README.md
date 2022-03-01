@@ -48,6 +48,12 @@ jerry9916/docker-cdh:latest:latest \
 /bin/bash -c '/root/startup.sh'
 ```
 
+启动后进入管理页开启服务：
+
+- 管理页地址：http://宿主机IP:8702
+- 帐号：cloudera
+- 密码：cloudera
+
 # 端口映射
 
 ```bash
