@@ -1,4 +1,4 @@
-FROM jerry9916/docker-cdh:base
+FROM jerry9916/cdh:base
 WORKDIR /root
 
 COPY bin/* conf/* /tmp/
