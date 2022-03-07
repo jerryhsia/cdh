@@ -16,7 +16,7 @@ docker stop cdh
 docker rm cdh
 
 docker run -d --name cdh --hostname=quickstart.cloudera --privileged=true \
--v /root/xiajie01:/root/xiajie01 \
+-v /root/jerry:/root/jerry \
 -v /etc/localtime:/etc/localtime \
 -p 8722:8020 \
 -p 8701:8022 \
