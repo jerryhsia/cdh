@@ -12,10 +12,10 @@
 # 快速使用
 
 ```bash
-docker stop docker-cdh
-docker rm docker-cdh
+docker stop cdh
+docker rm cdh
 
-docker run -d --name docker-cdh --hostname=quickstart.cloudera --privileged=true \
+docker run -d --name cdh --hostname=quickstart.cloudera --privileged=true \
 -v /root/xiajie01:/root/xiajie01 \
 -v /etc/localtime:/etc/localtime \
 -p 8722:8020 \
@@ -44,7 +44,7 @@ docker run -d --name docker-cdh --hostname=quickstart.cloudera --privileged=true
 -p 8720:9090 \
 -p 8723:88 \
 -p 8724:2181 \
-jerry9916/docker-cdh:latest:latest \
+jerry9916/cdh:latest:latest \
 /bin/bash -c '/root/startup.sh'
 ```
 
