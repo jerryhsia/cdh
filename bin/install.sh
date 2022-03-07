@@ -54,6 +54,8 @@ install_kdc() {
         }
         expect interact"
     done
+
+    chmod +r /root/keytab/*
     sleep 5
 }
 
