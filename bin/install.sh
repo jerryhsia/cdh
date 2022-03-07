@@ -80,6 +80,7 @@ install_kdc() {
 
         kadmin.local -q "xst -k /root/keytab/${user}_admin.keytab ${user}/admin@HADOOP.COM"
     done
+    chmod +x /root/keytab/*
     sleep 5
 }
 
