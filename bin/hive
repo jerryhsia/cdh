@@ -86,7 +86,7 @@ fi
 CLASSPATH="${HIVE_CONF_DIR}"
 
 #HIVE_LIB=${HIVE_HOME}/lib
-HIVE_LIB=${HIVE_HOME}/lib120
+HIVE_LIB=${HIVE_HOME}/libnew
 
 # needed for execution
 if [ ! -f ${HIVE_LIB}/hive-exec-*.jar ]; then

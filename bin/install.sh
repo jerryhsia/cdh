@@ -21,15 +21,23 @@ upgrade_java() {
 }
 
 upgrade_hive() {
-    wget -O apache-hive-1.2.2-bin.tar.gz https://archive.apache.org/dist/hive/hive-1.2.2/apache-hive-1.2.2-bin.tar.gz
+    wget -O apache-hive-2.1.1-bin.tar.gz https://archive.apache.org/dist/hive/hive-2.1.1/apache-hive-2.1.1-bin.tar.gz
     
-    tar -xf apache-hive-1.2.2-bin.tar.gz
-    cp -r apache-hive-1.2.2-bin/lib /usr/lib/hive/lib120
+    tar -xf apache-hive-2.1.1-bin.tar.gz
+    mv apache-hive-2.1.1-bin apache-hive-bin
+    cp -r apache-hive-bin/lib /usr/lib/hive/libnew
+    mv /usr/lib/hive/libnew/hive-service-rpc-2.1.1.jar /usr/lib/hive/libnew/hive-service-rpc-2.1.1.jar.bak
     rm -rf /usr/lib/hive/bin/hive && mv hive /usr/lib/hive/bin/
 
+    cd apache-hive-bin/scripts/metastore/upgrade/mysql/
+
     /etc/init.d/mysqld start
-    mysql -uroot -pcloudera metastore -e "source apache-hive-1.2.2-bin/scripts/metastore/upgrade/mysql/upgrade-1.1.0-to-1.2.0.mysql.sql"
+    mysql -uroot -pcloudera metastore -e "source upgrade-1.1.0-to-1.2.0.mysql.sql"
+    mysql -uroot -pcloudera metastore -e "source upgrade-1.2.0-to-2.0.0.mysql.sql"
+    mysql -uroot -pcloudera metastore -e "source upgrade-2.0.0-to-2.1.0.mysql.sql"
     echo "upgrade result:$?"
+
+    cd /tmp
     rm -rf apache-hive-*
 }
 
