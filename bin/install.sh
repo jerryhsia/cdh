@@ -41,7 +41,17 @@ install_kdc() {
         }
         expect interact"
 
-        kadmin.local -q "xst -k /root/keytab/${user}_user.keytab ${user}/user@HADOOP.COM"
+        kadmin.local -q "xst -norandkey -k /root/keytab/${user}_user.keytab ${user}/user@HADOOP.COM"
+
+        expect -c "
+        spawn kadmin.local -q \"add_principal ${user}\"
+        expect {
+                \"Enter password\" {send \"${user}\r\"; exp_continue}
+                \"Re-enter password\" {send \"${user}\r\"}
+        }
+        expect interact"
+
+        kadmin.local -q "xst -norandkey -k /root/keytab/${user}.keytab ${user}@HADOOP.COM"
     done
 
     for user in root
