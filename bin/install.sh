@@ -87,6 +87,6 @@ install_kdc() {
 # yum_install
 # install_kdc
 
-upgrade_hive
+# upgrade_hive
 upgrade_java
 upgrade_hbase_thrift2

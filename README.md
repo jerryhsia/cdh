@@ -6,7 +6,6 @@
 	- 基础镜像中生成了大数据组件客户端的keytab文件，位于`/root/keytab`，可直接复制使用。
 	- 可以直接开启kerberos认证，管理员账号：`root/admin@HADOOP.COM` 密码：`root`
 - Java7升级Java8
-- Hive升级1.2.2
 - HBaseThrift升级Thrift2
 
 # 快速使用
@@ -44,7 +43,7 @@ docker run -d --name cdh --hostname=quickstart.cloudera --privileged=true \
 -p 8720:9090 \
 -p 8723:88 \
 -p 8724:2181 \
-jerry9916/cdh:latest:latest \
+jerry9916/cdh:v0 \
 /bin/bash -c '/root/startup.sh'
 ```
 
