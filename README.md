@@ -6,12 +6,44 @@
 	- 基础镜像中生成了大数据组件客户端的keytab文件，位于`/root/keytab`，可直接复制使用。
 	- 可以直接开启kerberos认证，管理员账号：`root/admin@HADOOP.COM` 密码：`root`
 - Java7升级Java8
+- Hive升级、见分支管理
 - HBaseThrift升级Thrift2
 
-# 分支
+# 分支管理
 
 | 分支 | 镜像 | 内容 |
-| v0 | |  |
+|  ----  | ----  | ----  |
+| v0 | jerry9916/cdh:v0 | Java8、Hive1.1.0 |
+| v1 | jerry9916/cdh:v1 | Java8、Hive1.2.0 |
+| v2 | jerry9916/cdh:v2 | Java8、Hive2.1.1 |
+
+# principal
+
+| principal | 密码 | keytab |
+|  ----  | ----  | ----  |
+| root/admin@HADOOP.COM | root | /root/keytab/root_admin.keytab |
+| hbase/user@HADOOP.COM | hbase | /root/keytab/hbase_user.keytab |
+| hdfs/user@HADOOP.COM | hdfs | /root/keytab/hdfs_user.keytab |
+| hive/user@HADOOP.COM | hive | /root/keytab/hive_user.keytab |
+| hue/user@HADOOP.COM | hue | /root/keytab/hue_user.keytab |
+| impala/user@HADOOP.COM | impala | /root/keytab/impala_user.keytab |
+| oozie/user@HADOOP.COM | oozie | /root/keytab/oozie_user.keytab |
+| solr/user@HADOOP.COM | solr | /root/keytab/solr_user.keytab |
+| spark/user@HADOOP.COM | spark | /root/keytab/spark_user.keytab |
+| sqoop2/user@HADOOP.COM | sqoop2 | /root/keytab/sqoop2_user.keytab |
+| yarn/user@HADOOP.COM | yarn | /root/keytab/yarn_user.keytab |
+| zookeeper/user@HADOOP.COM | zookeeper | /root/keytab/zookeeper_user.keytab |
+| hbase@HADOOP.COM | hbase | /root/keytab/hbase.keytab |
+| hdfs@HADOOP.COM | hdfs | /root/keytab/hdfs.keytab |
+| hive@HADOOP.COM | hive | /root/keytab/hive.keytab |
+| hue@HADOOP.COM | hue | /root/keytab/hue.keytab |
+| impala@HADOOP.COM | impala | /root/keytab/impala.keytab |
+| oozie@HADOOP.COM | oozie | /root/keytab/oozie.keytab |
+| solr@HADOOP.COM | solr | /root/keytab/solr.keytab |
+| spark@HADOOP.COM | spark | /root/keytab/spark.keytab |
+| sqoop2@HADOOP.COM | sqoop2 | /root/keytab/sqoop2.keytab |
+| yarn@HADOOP.COM | yarn | /root/keytab/yarn.keytab |
+| zookeeper@HADOOP.COM | zookeeper | /root/keytab/zookeeper.keytab |
 
 # 快速使用
 
