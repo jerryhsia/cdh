@@ -90,3 +90,5 @@ install_kdc() {
 # upgrade_hive
 upgrade_java
 upgrade_hbase_thrift2
+
+rm -rf /tmp/hive
