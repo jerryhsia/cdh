@@ -21,12 +21,12 @@ upgrade_java() {
 }
 
 upgrade_hive() {
-    wget -O apache-hive-2.1.1-bin.tar.gz https://archive.apache.org/dist/hive/hive-2.1.1/apache-hive-2.1.1-bin.tar.gz
+    wget -O apache-hive-2.1.0-bin.tar.gz https://ai-platform-package.gz.bcebos.com/bigdata/apache-hive-2.1.0-bin.tar.gz
     
-    tar -xf apache-hive-2.1.1-bin.tar.gz
-    mv apache-hive-2.1.1-bin apache-hive-bin
+    tar -xf apache-hive-2.1.0-bin.tar.gz
+    mv apache-hive-2.1.0-bin apache-hive-bin
     cp -r apache-hive-bin/lib /usr/lib/hive/libnew
-    mv /usr/lib/hive/libnew/hive-service-rpc-2.1.1.jar /usr/lib/hive/libnew/hive-service-rpc-2.1.1.jar.bak
+    mv /usr/lib/hive/libnew/hive-service-rpc-2.1.0.jar /usr/lib/hive/libnew/hive-service-rpc-2.1.0.jar.bak
     rm -rf /usr/lib/hive/bin/hive && mv hive /usr/lib/hive/bin/
 
     cd apache-hive-bin/scripts/metastore/upgrade/mysql/
