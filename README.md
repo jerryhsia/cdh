@@ -6,7 +6,7 @@
 	- 基础镜像中生成了大数据组件客户端的keytab文件，位于`/root/keytab`，可直接复制使用。
 	- 可以直接开启kerberos认证，管理员账号：`root/admin@HADOOP.COM` 密码：`root`
 - Java7升级Java8
-- Hive升级1.2.2
+- Hive升级1.2.0
 - HBaseThrift升级Thrift2
 
 # 快速使用
